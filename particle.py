@@ -23,8 +23,7 @@ class Particle:
         self.fitness = abs((self.A+self.B+self.C+self.D) - self.target)
         if (self.fitness < self.pBest):
             self.pBest = self.fitness
-    def getFitness(self):
-        return self.fitness
+
     def update(self, gBest):
         test = self.A+self.B+self.C+self.D
         r1 = random.random()
