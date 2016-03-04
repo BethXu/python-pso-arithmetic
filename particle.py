@@ -14,14 +14,17 @@ class Particle:
         self.B = random.randint(low, high)
         self.C = random.randint(low, high)
         self.D = random.randint(low, high)
+        
         self.pBest = abs((self.A+self.B+self.C+self.D) - self.target)
         self.velocity = 0
+        self.fitness = self.pBest
             
     def calculateFitness(self):
         self.fitness = abs((self.A+self.B+self.C+self.D) - self.target)
         if (self.fitness < self.pBest):
             self.pBest = self.fitness
-    
+    def getFitness(self):
+        return self.fitness
     def update(self, gBest):
         test = self.A+self.B+self.C+self.D
         r1 = random.random()

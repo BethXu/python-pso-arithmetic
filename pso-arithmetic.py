@@ -13,14 +13,13 @@ def main():
     
     generations = 0
     converged = False
-    while(generations < MAX_GENERATIONS and (converged == False)):
+    while(generations < MAX_GENERATIONS and (not converged)):
         
         for i in range(NUM_PARTICLES):
             swarm[i].calculateFitness()
-            if (swarm[i].fitness == 0):
-                converged = True
+            converged = converged or (swarm[i].fitness == 0)
               
-        print "[" + str(converged) + "] Generation: " + str(generations)
+        print "[] Generation: " + str(generations)
         for i in range(NUM_PARTICLES):
             print swarm[i]
             
