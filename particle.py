@@ -35,6 +35,7 @@ class Particle:
             self.pBest = self.fitness
 
     # Update this particles attributes A, B, C, D based on Eberhart & Kennedy's equation
+    # velocity[i](t+1) = vrlocity[i] + C1 * R1(pBest - current) + C2 * R2 * (gBest - current)
     def update(self, gBest):
         # Set test = to this particles current solution
         test = self.A+self.B+self.C+self.D
